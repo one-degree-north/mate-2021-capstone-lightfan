@@ -1,18 +1,11 @@
 
-
-
-
-
-
 import serial 
-
 
 port = str("/dev/tty.usbmodem14201")
 baud_rate = 9600
 timeout = 0
 
 ser = serial.Serial(port, baud_rate, timeout=0)
-
 
 
 while True:
