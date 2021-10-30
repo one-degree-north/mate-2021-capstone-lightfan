@@ -15,48 +15,4 @@ while True:
     byte_data = int(fan_speed/255 * 253) #converting to data byte 
     new_packet = ser.write(fan_speed)
 
-    
-
-
-
-        
-    
-        
-        
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-'''
-number: int = input("Enter number: ")
-print("New number is", number*2)
-'''
-
+ 
