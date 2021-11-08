@@ -7,11 +7,10 @@ class Comms:
     def __init__(self, port, bdrate):
         self.port = port
         self.bdrate = bdrate
-        #ser = serial.Serial(self.port, self.baud_rate)
+        ser = serial.Serial(self.port, self.baud_rate)
         
     def run(self):
         while True:
-            '''
             packet = ser.read()
             packets = packet.split(chr(127))
             self.photoResistor = packets[0]
@@ -21,7 +20,6 @@ class Comms:
             fan_speed = int(lightVal/1053 * 255) #converting to fan speed;  
             new_packet = ser.write(fan_speed)
             sleep(3)
-            '''
 
     def start_thread(self):
         start_thread = Thread(target = self.run) #initializing the thread 
