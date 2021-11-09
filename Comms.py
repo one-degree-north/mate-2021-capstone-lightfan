@@ -11,14 +11,14 @@ class Comms:
         
     def run(self):
         while True:
-            packet = ser.read()
+            packet = self.ser.read()
             packets = packet.split(chr(127))
             self.photoResistor = packets[0]
             self.rpm = packets[1]
             self.temp = packets[2]
             lightVal = int(photoResistor)/255 * 1053 
             fan_speed = int(lightVal/1053 * 255)   
-            new_packet = ser.write(fan_speed)
+            new_packet = self.ser.write(fan_speed)
 
     def start_thread(self):
         start_thread = Thread(target = self.run) #initializing the thread 
