@@ -16,8 +16,8 @@ class Comms:
             self.photoResistor = packets[0]
             self.rpm = packets[1]
             self.temp = packets[2]
-            lightVal = int(photoResistor)/255 * 1053 #decoding packet into light value
-            fan_speed = int(lightVal/1053 * 255) #converting to fan speed;  
+            lightVal = int(photoResistor)/255 * 1053 
+            fan_speed = int(lightVal/1053 * 255)   
             new_packet = ser.write(fan_speed)
 
     def start_thread(self):
