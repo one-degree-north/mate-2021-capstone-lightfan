@@ -27,3 +27,6 @@ class Comms:
 
 ob = Comms("/dev/tty.usbmodem14201", 9600)
 ob.start_thread()
+
+
+
