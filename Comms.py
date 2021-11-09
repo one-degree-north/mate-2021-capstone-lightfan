@@ -4,9 +4,9 @@ from threading import Thread
 import serial
 
 class Comms:
-    def __init__(self, port, bdrate):
+    def __init__(self, port, baud_rate):
         self.port = port
-        self.bdrate = bdrate
+        self.baud_rate = baud_rate
         ser = serial.Serial(self.port, self.baud_rate)
         
     def run(self):
@@ -19,7 +19,6 @@ class Comms:
             lightVal = int(photoResistor)/255 * 1053 #decoding packet into light value
             fan_speed = int(lightVal/1053 * 255) #converting to fan speed;  
             new_packet = ser.write(fan_speed)
-            sleep(3)
 
     def start_thread(self):
         start_thread = Thread(target = self.run) #initializing the thread 
