@@ -6,8 +6,8 @@ class Comms:
         self.port = port
         self.baud_rate = baud_rate
         ser = serial.Serial(self.port, self.baud_rate)
-        ser.close()
-        ser.open()
+        self.ser.close()
+        self.ser.open()
         
     def run(self):
         while True:
